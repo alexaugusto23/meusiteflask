@@ -19,7 +19,7 @@ def favicon():
 def hello_world():
     return '<h1>Meu primeiro Site no flask localmente!</h1>'
 
-@app.route('/inicio')
+@app.route('/home')
 def inicio():
     return render_template('index.html')
 
