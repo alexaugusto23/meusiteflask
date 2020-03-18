@@ -3,17 +3,7 @@
 
 from flask import Flask, render_template
 
-import os
-from flask import send_from_directory
-
 app = Flask(__name__)
-
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='icone.png')
-
 
 @app.route('/')
 def hello_world():
