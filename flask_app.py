@@ -12,9 +12,10 @@ def hello_world():
 
 @app.route('/home')
 def inicio():
-    icone = url_for ('static', filename='icone')
+    icone = url_for ('static', filename='peter')
     return render_template('index.html')
 
 @app.route('/favicon.ico')
-def favicon():	def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+    'favicon.ico', mimetype='img/peter.png')
