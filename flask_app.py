@@ -1,7 +1,8 @@
 
 # A very simple Flask Hello World app for you to get started with...
-
-from flask import Flask, render_templates
+import os
+from flask import send_from_directory
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -11,5 +12,9 @@ def hello_world():
 
 @app.route('/home')
 def inicio():
-    return render_templates('index.html')
+    icone = url_for ('static', filename='icone')
+    return render_template('index.html')
 
+@app.route('/favicon.ico')
+def favicon():	def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
